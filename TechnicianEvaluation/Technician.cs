@@ -39,6 +39,7 @@ namespace TechnicianEvaluation
             efficiencyList.Add(efficiency);
         }
 
+        // Use lists to calculate skill and efficiency
         List<double> skillList = new List<double>();
         List<double> efficiencyList = new List<double>();
 
