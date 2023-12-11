@@ -58,6 +58,7 @@
             newTechButton.TabIndex = 2;
             newTechButton.Text = "New Tech";
             newTechButton.UseVisualStyleBackColor = true;
+            newTechButton.Click += newTechButton_Click;
             // 
             // Form1
             // 

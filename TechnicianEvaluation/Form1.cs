@@ -9,8 +9,13 @@ namespace TechnicianEvaluation
 
         private void findButton_Click(object sender, EventArgs e)
         {
-            Form technician = new Form();
-            technician.Show();
+            
+        }
+
+        private void newTechButton_Click(object sender, EventArgs e)
+        {
+            NewTech newTech = new NewTech();
+            newTech.Show();
         }
     }
 }
