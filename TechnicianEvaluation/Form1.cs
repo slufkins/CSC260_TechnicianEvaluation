@@ -14,10 +14,17 @@ namespace TechnicianEvaluation
 
             foreach (Technician t in techList)
             {
+                bool ismatch = false;
+
                 if(t.TechID == ID)
                 {
+                    ismatch = true;
                     EvaluationForm techEval = new EvaluationForm(t);
                     techEval.Show();
+                }
+                if (ismatch == false)
+                {
+                    searchTech.Text = "Invalid";
                 }
             }
 
