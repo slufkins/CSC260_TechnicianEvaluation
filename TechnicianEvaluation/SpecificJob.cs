@@ -9,5 +9,16 @@ namespace TechnicianEvaluation
     internal class SpecificJob : Job
     {
 
+        private readonly double _actualTime;
+        public SpecificJob(string category, double skill, double bookTime, double actualTime) : base (category, bookTime, skill)
+        {
+            _actualTime = actualTime;
+        }
+
+        public double ActualTime
+        {
+            get { return _actualTime; }
+        }
+
     }
 }
