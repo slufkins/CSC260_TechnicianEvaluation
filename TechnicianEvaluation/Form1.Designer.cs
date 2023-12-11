@@ -28,12 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            searchTech = new TextBox();
+            findButton = new Button();
+            newTechButton = new Button();
+            SuspendLayout();
+            // 
+            // searchTech
+            // 
+            searchTech.Location = new Point(12, 12);
+            searchTech.Name = "searchTech";
+            searchTech.Size = new Size(100, 23);
+            searchTech.TabIndex = 0;
+            // 
+            // findButton
+            // 
+            findButton.Location = new Point(118, 12);
+            findButton.Name = "findButton";
+            findButton.Size = new Size(75, 23);
+            findButton.TabIndex = 1;
+            findButton.Text = "Find";
+            findButton.UseVisualStyleBackColor = true;
+            findButton.Click += findButton_Click;
+            // 
+            // newTechButton
+            // 
+            newTechButton.Location = new Point(199, 12);
+            newTechButton.Name = "newTechButton";
+            newTechButton.Size = new Size(75, 23);
+            newTechButton.TabIndex = 2;
+            newTechButton.Text = "New Tech";
+            newTechButton.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(304, 58);
+            Controls.Add(newTechButton);
+            Controls.Add(findButton);
+            Controls.Add(searchTech);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox searchTech;
+        private Button findButton;
+        private Button newTechButton;
     }
 }

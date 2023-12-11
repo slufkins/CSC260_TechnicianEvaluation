@@ -6,5 +6,11 @@ namespace TechnicianEvaluation
         {
             InitializeComponent();
         }
+
+        private void findButton_Click(object sender, EventArgs e)
+        {
+            Form technician = new Form();
+            technician.Show();
+        }
     }
 }
