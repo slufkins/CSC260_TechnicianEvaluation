@@ -21,7 +21,7 @@ namespace TechnicianEvaluation
             _techID = random.Next(100, 999);
             _fname = fname;
             _lname = lname;
-            _skill = 'C';
+            _skill = 0;
             _efficiency = 0;
         }
 

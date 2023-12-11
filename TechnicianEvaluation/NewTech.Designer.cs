@@ -75,6 +75,7 @@
             enterNewTechButton.TabIndex = 4;
             enterNewTechButton.Text = "Enter";
             enterNewTechButton.UseVisualStyleBackColor = true;
+            enterNewTechButton.Click += enterNewTechButton_Click;
             // 
             // NewTech
             // 

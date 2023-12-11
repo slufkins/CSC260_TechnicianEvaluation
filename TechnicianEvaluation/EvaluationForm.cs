@@ -17,7 +17,20 @@ namespace TechnicianEvaluation
             InitializeComponent();
             techID.Text = ("Technician ID: " + tech.TechID);
             techName.Text = "Name: " + tech.FirstName + " " + tech.LastName;
-            techSkill.Text = "Skill Level: " + tech.Skill;
+            char ranking = 'C';
+            if (tech.Skill >= 4)
+            {
+                ranking = 'A';
+            }
+            else if (tech.Skill >= 3 && tech.Skill < 4)
+            {
+                ranking = 'B';
+            }
+            else if (tech.Skill < 3)
+            {
+                ranking = 'C';
+            }
+            techSkill.Text = "Skill Level: " + ranking;
             techEfficiency.Text = "Efficiency: " + tech.Efficiency;
         }
 
