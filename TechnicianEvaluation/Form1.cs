@@ -12,9 +12,16 @@ namespace TechnicianEvaluation
         {
             double ID = Convert.ToDouble(searchTech.Text);
 
-            var selectedTech = from t in techList
-                               where t.TechID == ID
-                               select t;
+            foreach (Technician t in techList)
+            {
+                if(t.TechID == ID)
+                {
+                    EvaluationForm techEval = new EvaluationForm(t);
+                    techEval.Show();
+                }
+            }
+
+            
         }
 
         private void newTechButton_Click(object sender, EventArgs e)

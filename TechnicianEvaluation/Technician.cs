@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TechnicianEvaluation
 {
-    internal class Technician
+    public class Technician
     {
         readonly int _techID;
         string _fname;
