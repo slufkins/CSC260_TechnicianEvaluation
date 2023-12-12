@@ -36,8 +36,36 @@ namespace TechnicianEvaluation
 
         private void EvaluationForm_Load(object sender, EventArgs e)
         {
-            
 
+
+        }
+
+        private void addJobButton_Click(object sender, EventArgs e)
+        {
+            int year = Convert.ToInt32(yearBox);
+            string make = makeBox.ToString();
+            string model = modelBox.ToString();
+
+            Vehicle newvehicle = new Vehicle(year, make, model);
+
+            string description = jobBox.Text;
+            char skill = Convert.ToChar(skillBox.Text);
+            double newSkill;
+
+            if (skill == 'A')
+            {
+                newSkill = 5;
+            }
+            else if (skill == 'B')
+            {
+                newSkill = 4;
+            }
+            else if (skill == 'C')
+            {
+                newSkill = 3;
+            }
+
+            
         }
     }
 }
