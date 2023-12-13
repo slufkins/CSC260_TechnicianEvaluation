@@ -12,6 +12,7 @@ namespace TechnicianEvaluation
 {
     public partial class EvaluationForm : Form
     {
+        Technician localTech;
         public EvaluationForm(Technician tech)
         {
             InitializeComponent();
@@ -32,6 +33,8 @@ namespace TechnicianEvaluation
             }
             techSkill.Text = "Skill Level: " + ranking;
             techEfficiency.Text = "Efficiency: " + tech.Efficiency;
+
+            localTech = tech;
         }
 
         private void EvaluationForm_Load(object sender, EventArgs e)
@@ -42,15 +45,18 @@ namespace TechnicianEvaluation
 
         private void addJobButton_Click(object sender, EventArgs e)
         {
-            int year = Convert.ToInt32(yearBox);
+            int year = Convert.ToInt32(yearBox.Text);
             string make = makeBox.ToString();
             string model = modelBox.ToString();
 
             Vehicle newvehicle = new Vehicle(year, make, model);
 
             string description = jobBox.Text;
-            char skill = Convert.ToChar(skillBox.Text);
-            double newSkill;
+            string skillText = skillBox.Text;
+            char skill = Convert.ToChar(skillText);
+            double newSkill = 0;
+            double bookTime = Convert.ToDouble(bookTimeBox.Text);
+            double actualTime = Convert.ToDouble(actualTimeBox.Text);
 
             if (skill == 'A')
             {
@@ -65,7 +71,14 @@ namespace TechnicianEvaluation
                 newSkill = 3;
             }
 
-            
+            SpecificJob job = new SpecificJob(description, skill, bookTime, actualTime);
+            double jobEfficiency = job.calculateEfficiency(bookTime, actualTime);
+
+            localTech.Efficiency = jobEfficiency;
+            localTech.Skill = newSkill;
+
+            techEfficiency.Text = "Efficiency " + localTech.Efficiency;
+
         }
     }
 }

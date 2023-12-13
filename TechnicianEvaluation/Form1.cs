@@ -11,21 +11,27 @@ namespace TechnicianEvaluation
         private void findButton_Click(object sender, EventArgs e)
         {
             double ID = Convert.ToDouble(searchTech.Text);
+            int counter = techList.Count;
+            bool ismatch = false;
 
-            foreach (Technician t in techList)
+            for (int i = 0; i < techList.Count; i++)
             {
-                bool ismatch = false;
-
-                if(t.TechID == ID)
+                if (techList[i].TechID == ID)
                 {
+                    EvaluationForm techEval = new EvaluationForm(techList[i]);
                     ismatch = true;
-                    EvaluationForm techEval = new EvaluationForm(t);
                     techEval.Show();
                 }
+                
                 if (ismatch == false)
                 {
                     searchTech.Text = "Invalid";
                 }
+            }
+
+            if (ismatch == false) 
+            { 
+
             }
 
             

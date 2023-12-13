@@ -20,5 +20,11 @@ namespace TechnicianEvaluation
             get { return _actualTime; }
         }
 
+        public double calculateEfficiency (double bookTime, double actualTime)
+        {
+            double efficiency = bookTime / ActualTime;
+            return efficiency;
+        }
+
     }
 }

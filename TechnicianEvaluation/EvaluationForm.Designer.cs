@@ -44,7 +44,7 @@
             modelBox = new TextBox();
             jobBox = new TextBox();
             bookTimeBox = new TextBox();
-            actualTime = new TextBox();
+            actualTimeBox = new TextBox();
             skillBox = new Label();
             jobSkillBox = new TextBox();
             SuspendLayout();
@@ -184,12 +184,12 @@
             bookTimeBox.Size = new Size(100, 23);
             bookTimeBox.TabIndex = 19;
             // 
-            // actualTime
+            // actualTimeBox
             // 
-            actualTime.Location = new Point(298, 192);
-            actualTime.Name = "actualTime";
-            actualTime.Size = new Size(100, 23);
-            actualTime.TabIndex = 20;
+            actualTimeBox.Location = new Point(298, 192);
+            actualTimeBox.Name = "actualTimeBox";
+            actualTimeBox.Size = new Size(100, 23);
+            actualTimeBox.TabIndex = 20;
             // 
             // skillBox
             // 
@@ -214,7 +214,7 @@
             ClientSize = new Size(506, 358);
             Controls.Add(jobSkillBox);
             Controls.Add(skillBox);
-            Controls.Add(actualTime);
+            Controls.Add(actualTimeBox);
             Controls.Add(bookTimeBox);
             Controls.Add(jobBox);
             Controls.Add(modelBox);
@@ -256,7 +256,7 @@
         private TextBox modelBox;
         private TextBox jobBox;
         private TextBox bookTimeBox;
-        private TextBox actualTime;
+        private TextBox actualTimeBox;
         private Label skillBox;
         private TextBox jobSkillBox;
     }
