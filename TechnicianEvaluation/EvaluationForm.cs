@@ -13,6 +13,7 @@ namespace TechnicianEvaluation
     public partial class EvaluationForm : Form
     {
         Technician localTech;
+        List<string> jobList = new List<string>();
         public EvaluationForm(Technician tech)
         {
             InitializeComponent();
@@ -32,9 +33,10 @@ namespace TechnicianEvaluation
                 ranking = 'C';
             }
             techSkill.Text = "Skill Level: " + ranking;
-            techEfficiency.Text = "Efficiency: " + tech.Efficiency;
+            techEfficiency.Text = "Efficiency: " + Math.Round(tech.Efficiency, 2) + "%";
 
             localTech = tech;
+            
         }
 
         private void EvaluationForm_Load(object sender, EventArgs e)
@@ -48,37 +50,42 @@ namespace TechnicianEvaluation
             int year = Convert.ToInt32(yearBox.Text);
             string make = makeBox.ToString();
             string model = modelBox.ToString();
-
-            Vehicle newvehicle = new Vehicle(year, make, model);
-
             string description = jobBox.Text;
-            string skillText = skillBox.Text;
-            char skill = Convert.ToChar(skillText);
-            double newSkill = 0;
+            string skill = jobSkillBox.Text;
             double bookTime = Convert.ToDouble(bookTimeBox.Text);
             double actualTime = Convert.ToDouble(actualTimeBox.Text);
+            double newSkill = 0;
 
-            if (skill == 'A')
+            if (skill == "A")
             {
                 newSkill = 5;
             }
-            else if (skill == 'B')
+            else if (skill == "B")
             {
                 newSkill = 4;
             }
-            else if (skill == 'C')
+            else if (skill == "C")
             {
                 newSkill = 3;
             }
 
-            SpecificJob job = new SpecificJob(description, skill, bookTime, actualTime);
+            SpecificJob job = new SpecificJob(description, newSkill, bookTime, actualTime, year, make, model);
             double jobEfficiency = job.calculateEfficiency(bookTime, actualTime);
 
             localTech.Efficiency = jobEfficiency;
             localTech.Skill = newSkill;
 
-            techEfficiency.Text = "Efficiency " + localTech.Efficiency;
+            techEfficiency.Text = "Efficiency " + Math.Round(localTech.Efficiency, 2) + "%";
 
+            yearBox.Text = "";
+            makeBox.Text = "";
+            modelBox.Text = "";
+            jobBox.Text = "";
+            jobSkillBox.Text = "";
+            bookTimeBox.Text = "";
+            actualTimeBox.Text = "";
+
+            
         }
     }
 }

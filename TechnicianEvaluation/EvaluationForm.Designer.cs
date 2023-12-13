@@ -47,6 +47,7 @@
             actualTimeBox = new TextBox();
             skillBox = new Label();
             jobSkillBox = new TextBox();
+            historyList = new Label();
             SuspendLayout();
             // 
             // techID
@@ -207,11 +208,20 @@
             jobSkillBox.Size = new Size(100, 23);
             jobSkillBox.TabIndex = 22;
             // 
+            // historyList
+            // 
+            historyList.AutoSize = true;
+            historyList.Location = new Point(11, 239);
+            historyList.Name = "historyList";
+            historyList.Size = new Size(0, 15);
+            historyList.TabIndex = 23;
+            // 
             // EvaluationForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(506, 358);
+            ClientSize = new Size(506, 249);
+            Controls.Add(historyList);
             Controls.Add(jobSkillBox);
             Controls.Add(skillBox);
             Controls.Add(actualTimeBox);
@@ -259,5 +269,6 @@
         private TextBox actualTimeBox;
         private Label skillBox;
         private TextBox jobSkillBox;
+        private Label historyList;
     }
 }
